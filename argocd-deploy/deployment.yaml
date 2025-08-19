@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  vprofile-deplyment
+  namespace: default
+spec:
+  replicas: 3 # Number of replicas
+  selector:
+    matchLabels:
+      app: vprofile
+  template:
+    metadata:
+      labels:
+        app: vprofile
+    spec:
+      containers:
+        - name: myapp-v1
+          image: naveena106/argocd-deployment:v2
+          ports:
+            - containerPort: 8081
