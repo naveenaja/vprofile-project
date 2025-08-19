@@ -10,7 +10,7 @@ spec:
       app: vprofile
   template:
     metadata:
-      labels:
+      labels: 
         app: vprofile
     spec:
       containers:
